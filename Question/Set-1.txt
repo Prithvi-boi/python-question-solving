@@ -1,0 +1,17 @@
+🧩 Basics & Data Types
+----------------------------------------------------------------------
+1. Create a Python program that prints your name and age.
+
+2. Take two numbers from the user and print their sum.
+
+3. Write a program to swap two variables.
+
+4. Take the user’s name as input and greet them with “Hello, [name]!”.
+
+5. Find the area of a rectangle using user input for length and width.
+
+6. Check the data type of variables: x = 10, y = 5.5, z = "Python".
+
+7. Convert a string "123" into an integer and add 10 to it.
+
+8.Take a temperature in Celsius and convert it to Fahrenheit.
