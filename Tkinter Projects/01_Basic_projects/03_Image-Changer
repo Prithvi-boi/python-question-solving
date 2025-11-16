@@ -1,0 +1,40 @@
+from tkinter import *
+import time
+from PIL import Image, ImageTk
+
+def click(event=None):
+    display_btn1.config(image=tk_img2)
+    window.update()
+    time.sleep(0.1)
+    display_btn1.config(image=tk_img1)
+
+window = Tk()
+window.geometry('800x650')
+window.config(bg='blue')
+
+# Load PNG (with transparency)
+orig1 = Image.open(
+    r"C:\Users\prithvi\OneDrive\Coding\COLLEGE\python-question-solving\Tkinter Projects\00_Project_images\BET_png\Bet-Unclicked.png"
+).convert("RGBA")
+
+orig2 = Image.open(
+    r"C:\Users\prithvi\OneDrive\Coding\COLLEGE\python-question-solving\Tkinter Projects\00_Project_images\BET_png\Bet-Clicked.png"
+).convert("RGBA")
+
+# Create background the same color as window
+bg = Image.new("RGBA", orig1.size, window['bg'])
+
+# Composite transparent PNG on window background
+comp1 = Image.alpha_composite(bg, orig1)
+comp2 = Image.alpha_composite(bg, orig2)
+
+# Convert to Tkinter images
+tk_img1 = ImageTk.PhotoImage(comp1)
+tk_img2 = ImageTk.PhotoImage(comp2)
+
+# Display button image
+display_btn1 = Label(window, image=tk_img1, bd=0)
+display_btn1.place(x=100, y=100)
+display_btn1.bind("<Button-1>", click)
+
+window.mainloop()

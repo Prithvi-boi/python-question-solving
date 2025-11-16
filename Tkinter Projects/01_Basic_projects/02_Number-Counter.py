@@ -34,7 +34,6 @@ def reduce():
     if num == 1:
         reduce_btn.config(state=DISABLED)
 
-
 mywindow = Tk()
 mywindow.geometry('1000x600')
 mywindow.title('Click count')
@@ -50,7 +49,7 @@ max_btn = Button(text='Max',font=('Arial',20,'bold'),command=max_count)
 max_btn.place(x=490,y=350)
 
 reduce_btn = Button(text='Reduce',font=('Arial',20,'bold'),command=reduce)
-reduce_btn.place(x=390,y=460)
+reduce_btn.place(x=490,y=450)
 
 count_text = Label(text='1',font=('Arial',20,'bold'))
 count_text.place(x=600,y=170)
